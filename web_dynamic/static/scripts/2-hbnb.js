@@ -1,6 +1,6 @@
 $('document').ready(function () {
 	$.get('http://0.0.0.0:5001/api/v1/status/', function (response) {
-		if (response.sttatus === 'OK') {
+		if (response.status === 'OK') {
 			$('DIV#api_status').addClass('available');
 		} else {
 			$('DIV#api_status').removeClass('available');
@@ -8,7 +8,7 @@ $('document').ready(function () {
 	});
 
 	const amenityDict = {};
-	$('input[type=checkbox]').change(fucntion () {
+	$('input[type=checkbox]').change(function () {
 		if ($(this).is(':checked')) {
 			amenityDict[$(this).attr('data-id')] = $(this).attr('data.name');
 		} else {
